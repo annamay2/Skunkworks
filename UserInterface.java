@@ -32,16 +32,16 @@ public class UserInterface {
     }
 
     public void addAssignment() throws InterruptedException {
+        input.nextLine();
 
         System.out.println("Enter the name of the assignment:");
-        String currentName = input.next();
-
+        String currentName = input.nextLine();
         System.out.println("Enter the module this assignment is for:");
-        String currentModule = input.next();
+        String currentModule = input.nextLine();
         System.out.println("When is the assignment due? (dd/mm/yy)");
-        String currentDue = input.next();
+        String currentDue = input.nextLine();
         System.out.println("What are the details of this assignment?");
-        String currentDetails = input.next();
+        String currentDetails = input.nextLine();
 
         assignments.add(new Assignment(currentName, currentModule, currentDue, currentDetails));
 
@@ -57,7 +57,7 @@ public class UserInterface {
         assignments.remove(remove - 1);
 
         System.out.printf("Submitted Assignments:%n%n");
-        showSubmitted(assignments);
+        showSubmitted(submitted);
 
         System.out.printf("Assignments Currently Due:%n%n");
         showDue(assignments);
